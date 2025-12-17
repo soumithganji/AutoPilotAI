@@ -33,7 +33,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.roubao.autopilot.agent.AgentState
-import com.roubao.autopilot.ui.theme.BaoziTheme
+import com.roubao.autopilot.ui.theme.AutoPilotTheme
 import com.roubao.autopilot.ui.theme.Primary
 import com.roubao.autopilot.ui.theme.Secondary
 
@@ -68,7 +68,7 @@ fun HomeScreen(
     onShizukuRequired: () -> Unit = {},
     isExecuting: Boolean = false
 ) {
-    val colors = BaoziTheme.colors
+    val colors = AutoPilotTheme.colors
     var inputText by remember { mutableStateOf("") }
     // Use isExecuting or agentState?.isRunning to check if running
     val isRunning = isExecuting || agentState?.isRunning == true
@@ -208,7 +208,7 @@ fun PresetCommandsView(
     onCommandClick: (String) -> Unit,
     modifier: Modifier = Modifier
 ) {
-    val colors = BaoziTheme.colors
+    val colors = AutoPilotTheme.colors
     Column(
         modifier = modifier.padding(horizontal = 16.dp),
         verticalArrangement = Arrangement.Center
@@ -250,7 +250,7 @@ fun PresetCommandCard(
     onClick: () -> Unit,
     modifier: Modifier = Modifier
 ) {
-    val colors = BaoziTheme.colors
+    val colors = AutoPilotTheme.colors
     Card(
         modifier = modifier
             .clickable(onClick = onClick),
@@ -320,7 +320,7 @@ fun ExecutionLogView(
 
 @Composable
 fun ExecutingIndicator(currentStep: Int, currentModel: String = "") {
-    val colors = BaoziTheme.colors
+    val colors = AutoPilotTheme.colors
     val infiniteTransition = rememberInfiniteTransition(label = "executing")
     val animatedProgress by infiniteTransition.animateFloat(
         initialValue = 0f,
@@ -412,7 +412,7 @@ fun ExecutingIndicator(currentStep: Int, currentModel: String = "") {
 
 @Composable
 fun LogItem(log: String) {
-    val colors = BaoziTheme.colors
+    val colors = AutoPilotTheme.colors
     val logColor = when {
         log.contains("❌") -> colors.error
         log.contains("✅") -> colors.success
@@ -440,7 +440,7 @@ fun InputArea(
     enabled: Boolean,
     onInputClick: () -> Unit = {}
 ) {
-    val colors = BaoziTheme.colors
+    val colors = AutoPilotTheme.colors
     Surface(
         modifier = Modifier.fillMaxWidth(),
         color = colors.backgroundCard,

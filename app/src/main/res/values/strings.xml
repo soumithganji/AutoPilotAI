@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- App Name -->
-    <string name="app_name">Baozi</string>
+    <string name="app_name">AutoPilotAI</string>
 
     <!-- Tab Titles -->
-    <string name="tab_home">Baozi</string>
+    <string name="tab_home">AutoPilot</string>
     <string name="tab_history">History</string>
     <string name="tab_settings">Settings</string>
 
@@ -12,7 +12,7 @@
     <string name="home_ready">Ready. Tell me what you want to do</string>
     <string name="home_connect_shizuku">Please connect Shizuku first</string>
     <string name="home_try_these">Try these commands</string>
-    <string name="home_input_placeholder">Tell Baozi what you want to do…</string>
+    <string name="home_input_placeholder">Tell AutoPilotAI what you want to do…</string>
     <string name="home_executing">Executing Step %1$d</string>
     <string name="home_send">Send</string>
     <string name="home_stop">Stop</string>
@@ -107,29 +107,29 @@
     <string name="shizuku_help_step1_desc">Download Shizuku from Google Play or GitHub\n\n• Google Play: Search \"Shizuku\"\n• GitHub: github.com/RikkaApps/Shizuku</string>
     <string name="shizuku_help_step2_title">Start Shizuku</string>
     <string name="shizuku_help_step2_desc">Open Shizuku and choose a startup method:\n\n• Wireless debugging (recommended): Requires Android 11+, enable wireless debugging in developer options\n• Connect to computer: Start via ADB command</string>
-    <string name="shizuku_help_step3_title">Authorize Baozi</string>
-    <string name="shizuku_help_step3_desc">Find Baozi Autopilot in Shizuku\'s \"App Management\" and click authorize</string>
+    <string name="shizuku_help_step3_title">Authorize AutoPilotAI</string>
+    <string name="shizuku_help_step3_desc">Find AutoPilotAI in Shizuku\'s \"App Management\" and click authorize</string>
     <string name="shizuku_help_step4_title">Start Using</string>
-    <string name="shizuku_help_step4_desc">After authorization, return to Baozi. The status card will show \"Shizuku Connected\"</string>
+    <string name="shizuku_help_step4_desc">After authorization, return to AutoPilotAI. The status card will show \"Shizuku Connected\"</string>
 
     <!-- Overlay Help -->
     <string name="overlay_why">Why is overlay permission needed?</string>
-    <string name="overlay_reason">Baozi needs to display an overlay during task execution to:</string>
+    <string name="overlay_reason">AutoPilotAI needs to display an overlay during task execution to:</string>
     <string name="overlay_feature1">Show current execution progress</string>
     <string name="overlay_feature2">Provide a stop button to interrupt tasks anytime</string>
     <string name="overlay_feature3">Display status information above other apps</string>
     <string name="overlay_how">How to enable?</string>
-    <string name="overlay_how_desc">1. You\'ll be prompted when executing a task\n2. Or go to: Settings > Apps > Baozi > Overlay permission\n3. Enable \"Allow display over other apps\"</string>
+    <string name="overlay_how_desc">1. You\'ll be prompted when executing a task\n2. Or go to: Settings > Apps > AutoPilotAI > Overlay permission\n3. Enable \"Allow display over other apps\"</string>
     <string name="overlay_privacy">Privacy &amp; Security</string>
     <string name="overlay_privacy_desc">The overlay is only shown during task execution and does not collect any personal information. It automatically disappears after the task is complete.</string>
 
     <!-- Onboarding -->
-    <string name="onboarding_welcome">Welcome to Baozi</string>
-    <string name="onboarding_welcome_desc">Baozi is an intelligent automation assistant\nthat helps you operate your phone to complete various tasks</string>
+    <string name="onboarding_welcome">Welcome to AutoPilotAI</string>
+    <string name="onboarding_welcome_desc">AutoPilotAI is an intelligent automation assistant\nthat helps you operate your phone to complete various tasks</string>
     <string name="onboarding_ai">AI Powered</string>
-    <string name="onboarding_ai_desc">Based on advanced vision-language models,\nBaozi can understand screen content and make intelligent decisions</string>
+    <string name="onboarding_ai_desc">Based on advanced vision-language models,\nAutoPilotAI can understand screen content and make intelligent decisions</string>
     <string name="onboarding_easy">Easy to Use</string>
-    <string name="onboarding_easy_desc">Just describe what you want to do in natural language,\nand Baozi will automatically complete it for you</string>
+    <string name="onboarding_easy_desc">Just describe what you want to do in natural language,\nand AutoPilotAI will automatically complete it for you</string>
     <string name="onboarding_safe">Safe &amp; Secure</string>
     <string name="onboarding_safe_desc">Automatically stops when encountering sensitive pages\n(like payments, passwords) to protect your account</string>
     <string name="onboarding_skip">Skip</string>

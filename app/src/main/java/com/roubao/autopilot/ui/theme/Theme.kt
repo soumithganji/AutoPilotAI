@@ -44,7 +44,7 @@ val Error = Color(0xFFF44336)
 val Warning = Color(0xFFFF9800)
 
 // 主题颜色数据类
-data class BaoziColors(
+data class AutoPilotColors(
     val primary: Color,
     val primaryDark: Color,
     val primaryLight: Color,
@@ -63,7 +63,7 @@ data class BaoziColors(
 )
 
 // Dark theme colors
-val DarkBaoziColors = BaoziColors(
+val DarkAutoPilotColors = AutoPilotColors(
     primary = Primary,
     primaryDark = PrimaryDark,
     primaryLight = PrimaryLight,
@@ -82,7 +82,7 @@ val DarkBaoziColors = BaoziColors(
 )
 
 // Light theme colors
-val LightBaoziColors = BaoziColors(
+val LightAutoPilotColors = AutoPilotColors(
     primary = Primary,
     primaryDark = PrimaryDark,
     primaryLight = PrimaryLight,
@@ -101,7 +101,7 @@ val LightBaoziColors = BaoziColors(
 )
 
 // CompositionLocal for访问当前主题颜色
-val LocalBaoziColors = staticCompositionLocalOf { DarkBaoziColors }
+val LocalAutoPilotColors = staticCompositionLocalOf { DarkAutoPilotColors }
 
 // Material 3 Dark Color Scheme
 private val DarkColorScheme = darkColorScheme(
@@ -151,7 +151,7 @@ enum class ThemeMode {
 }
 
 @Composable
-fun BaoziTheme(
+fun AutoPilotTheme(
     themeMode: ThemeMode = ThemeMode.DARK,
     content: @Composable () -> Unit
 ) {
@@ -162,9 +162,10 @@ fun BaoziTheme(
     }
 
     val colorScheme = if (isDarkTheme) DarkColorScheme else LightColorScheme
-    val baoziColors = if (isDarkTheme) DarkBaoziColors else LightBaoziColors
+    val baoziColors = if (isDarkTheme) DarkAutoPilotColors else LightAutoPilotColors
 
-    CompositionLocalProvider(LocalBaoziColors provides baoziColors) {
+
+    CompositionLocalProvider(LocalAutoPilotColors provides baoziColors) {
         MaterialTheme(
             colorScheme = colorScheme,
             typography = Typography(),
@@ -174,8 +175,8 @@ fun BaoziTheme(
 }
 
 // 便捷访问当前主题颜色
-object BaoziTheme {
-    val colors: BaoziColors
+object AutoPilotTheme {
+    val colors: AutoPilotColors
         @Composable
-        get() = LocalBaoziColors.current
+        get() = LocalAutoPilotColors.current
 }

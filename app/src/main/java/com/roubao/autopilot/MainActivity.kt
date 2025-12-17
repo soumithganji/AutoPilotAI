@@ -132,8 +132,8 @@ class MainActivity : ComponentActivity() {
 
         setContent {
             val settings by settingsManager.settings.collectAsState()
-            BaoziTheme(themeMode = settings.themeMode) {
-                val colors = BaoziTheme.colors
+            AutoPilotTheme(themeMode = settings.themeMode) {
+                val colors = AutoPilotTheme.colors
                 // Dynamically update system bar colors
                 SideEffect {
                     val window = this@MainActivity.window
@@ -168,7 +168,7 @@ class MainActivity : ComponentActivity() {
         var hasShownShizukuHelp by remember { mutableStateOf(false) }
 
         val settings by settingsManager.settings.collectAsState()
-        val colors = BaoziTheme.colors
+        val colors = AutoPilotTheme.colors
         val agent = mobileAgent.value
         val agentState by agent?.state?.collectAsState() ?: remember { mutableStateOf(null) }
         val logs by agent?.logs?.collectAsState() ?: remember { mutableStateOf(emptyList<String>()) }

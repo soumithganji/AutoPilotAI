@@ -21,7 +21,7 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.roubao.autopilot.tools.ToolManager
-import com.roubao.autopilot.ui.theme.BaoziTheme
+import com.roubao.autopilot.ui.theme.AutoPilotTheme
 
 /**
  * Tool Info (for display)
@@ -103,7 +103,7 @@ val agentsList = listOf(
  */
 @Composable
 fun CapabilitiesScreen() {
-    val colors = BaoziTheme.colors
+    val colors = AutoPilotTheme.colors
 
     // Get Tools
     val tools = remember {
@@ -187,7 +187,7 @@ fun CapabilitiesScreen() {
 
 @Composable
 fun AgentsListView() {
-    val colors = BaoziTheme.colors
+    val colors = AutoPilotTheme.colors
 
     LazyColumn(
         modifier = Modifier.fillMaxSize(),
@@ -234,7 +234,7 @@ fun AgentsListView() {
 
 @Composable
 fun AgentCard(agent: AgentInfo) {
-    val colors = BaoziTheme.colors
+    val colors = AutoPilotTheme.colors
     var expanded by remember { mutableStateOf(false) }
 
     Card(
@@ -366,7 +366,7 @@ fun ToolsListView(tools: List<ToolInfo>) {
 
 @Composable
 fun ToolCard(tool: ToolInfo) {
-    val colors = BaoziTheme.colors
+    val colors = AutoPilotTheme.colors
 
     // Get icon by tool name
     val toolIcon = when (tool.name) {
@@ -428,7 +428,7 @@ fun ToolCard(tool: ToolInfo) {
 
 @Composable
 fun EmptyState(message: String) {
-    val colors = BaoziTheme.colors
+    val colors = AutoPilotTheme.colors
 
     Box(
         modifier = Modifier

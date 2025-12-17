@@ -28,7 +28,7 @@ import androidx.compose.ui.unit.sp
 import com.roubao.autopilot.data.ExecutionRecord
 import com.roubao.autopilot.data.ExecutionStatus
 import com.roubao.autopilot.data.ExecutionStep
-import com.roubao.autopilot.ui.theme.BaoziTheme
+import com.roubao.autopilot.ui.theme.AutoPilotTheme
 import com.roubao.autopilot.ui.theme.Primary
 import com.roubao.autopilot.ui.theme.Secondary
 
@@ -38,7 +38,7 @@ fun HistoryScreen(
     onRecordClick: (ExecutionRecord) -> Unit,
     onDeleteRecord: (String) -> Unit
 ) {
-    val colors = BaoziTheme.colors
+    val colors = AutoPilotTheme.colors
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -120,7 +120,7 @@ fun HistoryRecordCard(
     onClick: () -> Unit,
     onDelete: () -> Unit
 ) {
-    val colors = BaoziTheme.colors
+    val colors = AutoPilotTheme.colors
     var showDeleteDialog by remember { mutableStateOf(false) }
 
     if (showDeleteDialog) {
@@ -292,7 +292,7 @@ fun HistoryDetailScreen(
     record: ExecutionRecord,
     onBack: () -> Unit
 ) {
-    val colors = BaoziTheme.colors
+    val colors = AutoPilotTheme.colors
     // Tab state: 0 = Timeline 1 = Logs
     var selectedTab by remember { mutableStateOf(0) }
 
@@ -515,7 +515,7 @@ fun TimelineItem(
     step: ExecutionStep,
     isLast: Boolean
 ) {
-    val colors = BaoziTheme.colors
+    val colors = AutoPilotTheme.colors
     Row(modifier = Modifier.fillMaxWidth()) {
         // Timeline Indicator
         Column(

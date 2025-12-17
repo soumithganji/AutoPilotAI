@@ -42,7 +42,7 @@ import androidx.compose.ui.platform.LocalContext
 import com.roubao.autopilot.BuildConfig
 import com.roubao.autopilot.data.ApiProvider
 import com.roubao.autopilot.data.AppSettings
-import com.roubao.autopilot.ui.theme.BaoziTheme
+import com.roubao.autopilot.ui.theme.AutoPilotTheme
 import com.roubao.autopilot.ui.theme.ThemeMode
 import com.roubao.autopilot.utils.CrashHandler
 
@@ -63,7 +63,7 @@ fun SettingsScreen(
     shizukuPrivilegeLevel: String = "ADB", // "ADB", "ROOT", "NONE"
     onFetchModels: ((onSuccess: (List<String>) -> Unit, onError: (String) -> Unit) -> Unit)? = null
 ) {
-    val colors = BaoziTheme.colors
+    val colors = AutoPilotTheme.colors
     var showApiKeyDialog by remember { mutableStateOf(false) }
     var showModelDialog by remember { mutableStateOf(false) }
     var showThemeDialog by remember { mutableStateOf(false) }
@@ -484,21 +484,21 @@ fun SettingsScreen(
             if (showClearDialog) {
                 AlertDialog(
                     onDismissRequest = { showClearDialog = false },
-                    containerColor = BaoziTheme.colors.backgroundCard,
-                    title = { Text("Confirm Clear", color = BaoziTheme.colors.textPrimary) },
-                    text = { Text("Are you sure you want to delete all log files?", color = BaoziTheme.colors.textSecondary) },
+                    containerColor = AutoPilotTheme.colors.backgroundCard,
+                    title = { Text("Confirm Clear", color = AutoPilotTheme.colors.textPrimary) },
+                    text = { Text("Are you sure you want to delete all log files?", color = AutoPilotTheme.colors.textSecondary) },
                     confirmButton = {
                         TextButton(onClick = {
                             CrashHandler.clearLogs(context)
                             showClearDialog = false
                             android.widget.Toast.makeText(context, "Logs cleared", android.widget.Toast.LENGTH_SHORT).show()
                         }) {
-                            Text("Confirm", color = BaoziTheme.colors.error)
+                            Text("Confirm", color = AutoPilotTheme.colors.error)
                         }
                     },
                     dismissButton = {
                         TextButton(onClick = { showClearDialog = false }) {
-                            Text("Cancel", color = BaoziTheme.colors.textSecondary)
+                            Text("Cancel", color = AutoPilotTheme.colors.textSecondary)
                         }
                     }
                 )
@@ -660,7 +660,7 @@ fun SettingsScreen(
 
 @Composable
 fun StatusCard(shizukuAvailable: Boolean) {
-    val colors = BaoziTheme.colors
+    val colors = AutoPilotTheme.colors
     Card(
         modifier = Modifier
             .fillMaxWidth()
@@ -702,7 +702,7 @@ fun StatusCard(shizukuAvailable: Boolean) {
 
 @Composable
 fun SettingsSection(title: String) {
-    val colors = BaoziTheme.colors
+    val colors = AutoPilotTheme.colors
     Text(
         text = title,
         fontSize = 14.sp,
@@ -720,7 +720,7 @@ fun SettingsItem(
     onClick: () -> Unit,
     trailing: @Composable (() -> Unit)? = null
 ) {
-    val colors = BaoziTheme.colors
+    val colors = AutoPilotTheme.colors
     Card(
         modifier = Modifier
             .fillMaxWidth()
@@ -786,7 +786,7 @@ fun ThemeSelectDialog(
     onDismiss: () -> Unit,
     onSelect: (ThemeMode) -> Unit
 ) {
-    val colors = BaoziTheme.colors
+    val colors = AutoPilotTheme.colors
     AlertDialog(
         onDismissRequest = onDismiss,
         containerColor = colors.backgroundCard,
@@ -852,7 +852,7 @@ fun ApiKeyDialog(
     onDismiss: () -> Unit,
     onConfirm: (String) -> Unit
 ) {
-    val colors = BaoziTheme.colors
+    val colors = AutoPilotTheme.colors
     var key by remember { mutableStateOf(currentKey) }
     var showKey by remember { mutableStateOf(false) }
 
@@ -931,7 +931,7 @@ fun ModelSelectDialogWithFetch(
     onFetchModels: ((onSuccess: (List<String>) -> Unit, onError: (String) -> Unit) -> Unit)? = null,
     onUpdateCachedModels: (List<String>) -> Unit
 ) {
-    val colors = BaoziTheme.colors
+    val colors = AutoPilotTheme.colors
     val context = LocalContext.current
     var customModel by remember { mutableStateOf("") }
     var searchQuery by remember { mutableStateOf("") }
@@ -1295,7 +1295,7 @@ private fun maskApiKey(key: String): String {
 
 @Composable
 fun ShizukuHelpDialog(onDismiss: () -> Unit) {
-    val colors = BaoziTheme.colors
+    val colors = AutoPilotTheme.colors
     val context = LocalContext.current
 
     AlertDialog(
@@ -1360,7 +1360,7 @@ fun ShizukuHelpDialog(onDismiss: () -> Unit) {
 
 @Composable
 fun OverlayHelpDialog(onDismiss: () -> Unit) {
-    val colors = BaoziTheme.colors
+    val colors = AutoPilotTheme.colors
     AlertDialog(
         onDismissRequest = onDismiss,
         containerColor = colors.backgroundCard,
@@ -1432,7 +1432,7 @@ private fun HelpStep(
     title: String,
     description: String
 ) {
-    val colors = BaoziTheme.colors
+    val colors = AutoPilotTheme.colors
     Row {
         Box(
             modifier = Modifier
@@ -1469,7 +1469,7 @@ private fun HelpStep(
 
 @Composable
 private fun BulletPoint(text: String) {
-    val colors = BaoziTheme.colors
+    val colors = AutoPilotTheme.colors
     Row(
         modifier = Modifier.padding(start = 8.dp, top = 4.dp)
     ) {
@@ -1493,7 +1493,7 @@ fun MaxStepsDialog(
     onDismiss: () -> Unit,
     onConfirm: (Int) -> Unit
 ) {
-    val colors = BaoziTheme.colors
+    val colors = AutoPilotTheme.colors
     var steps by remember { mutableStateOf(currentSteps.toFloat()) }
 
     AlertDialog(
@@ -1605,7 +1605,7 @@ fun ProviderSelectDialog(
     onSelectProvider: (ApiProvider) -> Unit,
     onUpdateCustomUrl: (String) -> Unit
 ) {
-    val colors = BaoziTheme.colors
+    val colors = AutoPilotTheme.colors
     var selectedProviderId by remember { mutableStateOf(currentProviderId) }
     var customUrl by remember { mutableStateOf(customBaseUrl) }
 
@@ -1738,7 +1738,7 @@ fun RootModeWarningDialog(
     onDismiss: () -> Unit,
     onConfirm: () -> Unit
 ) {
-    val colors = BaoziTheme.colors
+    val colors = AutoPilotTheme.colors
     AlertDialog(
         onDismissRequest = onDismiss,
         containerColor = colors.backgroundCard,
@@ -1807,7 +1807,7 @@ fun SuCommandWarningDialog(
     onDismiss: () -> Unit,
     onConfirm: () -> Unit
 ) {
-    val colors = BaoziTheme.colors
+    val colors = AutoPilotTheme.colors
     AlertDialog(
         onDismissRequest = onDismiss,
         containerColor = colors.backgroundCard,

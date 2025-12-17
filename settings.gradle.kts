@@ -15,5 +15,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "AutoPilot"
+rootProject.name = "AutoPilotAI"
 include(":app")

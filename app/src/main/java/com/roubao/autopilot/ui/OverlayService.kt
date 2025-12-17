@@ -157,8 +157,8 @@ class OverlayService : Service() {
     }
 
     private fun startForegroundNotification() {
-        val channelId = "baozi_overlay"
-        val channelName = "BaoziStatus"
+        val channelId = "autopilot_overlay"
+        val channelName = "AutoPilotStatus"
 
         try {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
@@ -167,7 +167,7 @@ class OverlayService : Service() {
                     channelName,
                     NotificationManager.IMPORTANCE_LOW
                 ).apply {
-                    description = "ShowBaozi执行Status"
+                    description = "Show AutoPilot Execution Status"
                     setShowBadge(false)
                 }
                 val notificationManager = getSystemService(NotificationManager::class.java)
@@ -182,8 +182,8 @@ class OverlayService : Service() {
             )
 
             val notification = NotificationCompat.Builder(this, channelId)
-                .setContentTitle("Baozi运行中")
-                .setContentText("Executing自动化任务...")
+                .setContentTitle("AutoPilot Running")
+                .setContentText("Executing automation task...")
                 .setSmallIcon(R.mipmap.ic_launcher)
                 .setContentIntent(pendingIntent)
                 .setOngoing(true)
@@ -196,7 +196,7 @@ class OverlayService : Service() {
             // 降级:使用最简单的通知确保 startForeground 被调用
             try {
                 val fallbackNotification = NotificationCompat.Builder(this, channelId)
-                    .setContentTitle("Baozi")
+                    .setContentTitle("AutoPilotAI")
                     .setSmallIcon(R.mipmap.ic_launcher)
                     .build()
                 startForeground(1001, fallbackNotification)
@@ -238,7 +238,7 @@ class OverlayService : Service() {
 
         // Status文字
         textView = TextView(this).apply {
-            text = "Baozi"
+            text = "AutoPilot"
             textSize = 13f
             setTextColor(Color.WHITE)
             gravity = Gravity.CENTER

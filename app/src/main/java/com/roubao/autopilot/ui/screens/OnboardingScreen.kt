@@ -24,7 +24,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.roubao.autopilot.ui.theme.BaoziTheme
+import com.roubao.autopilot.ui.theme.AutoPilotTheme
 import com.roubao.autopilot.ui.theme.Primary
 import kotlinx.coroutines.launch
 
@@ -67,7 +67,7 @@ val onboardingPages = listOf(
 fun OnboardingScreen(
     onComplete: () -> Unit
 ) {
-    val colors = BaoziTheme.colors
+    val colors = AutoPilotTheme.colors
     val pagerState = rememberPagerState(pageCount = { onboardingPages.size })
     val coroutineScope = rememberCoroutineScope()
 
@@ -180,7 +180,7 @@ fun OnboardingPageContent(
     page: OnboardingPage,
     modifier: Modifier = Modifier
 ) {
-    val colors = BaoziTheme.colors
+    val colors = AutoPilotTheme.colors
 
     Column(
         modifier = modifier.padding(horizontal = 32.dp),

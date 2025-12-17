@@ -229,7 +229,7 @@ class DeviceController(private val context: Context? = null) {
                 // Must operate Clipboard on main thread
                 mainHandler.post {
                     try {
-                        val clip = ClipData.newPlainText("baozi_input", text)
+                        val clip = ClipData.newPlainText("autopilot_input", text)
                         clipboardManager?.setPrimaryClip(clip)
                         clipboardSet = true
                         println("[DeviceController] ✅ Clipboard set: $text")
